@@ -1,6 +1,6 @@
-package com.xzw.goldbug2.repository;
+package com.wemeet.wemeet.repository;
 
-import com.xzw.goldbug2.entity.BugContent;
+import com.wemeet.wemeet.entity.BugContent;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

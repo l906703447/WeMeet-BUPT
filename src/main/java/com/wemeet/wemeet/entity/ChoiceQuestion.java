@@ -1,4 +1,4 @@
-package com.xzw.goldbug2.entity;
+package com.wemeet.wemeet.entity;
 
 import lombok.Getter;
 import lombok.Setter;

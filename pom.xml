@@ -8,10 +8,10 @@
         <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.xzw</groupId>
-    <artifactId>goldbug2</artifactId>
+    <groupId>com.wemeet</groupId>
+    <artifactId>wemeet</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>goldbug2</name>
+    <name>wemeet</name>
     <description>GoldBud version 2</description>
 
     <properties>

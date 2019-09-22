@@ -1,13 +1,13 @@
-package com.xzw.goldbug2;
+package com.wemeet.wemeet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Goldbug2Application {
+public class WemeetApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Goldbug2Application.class, args);
+        SpringApplication.run(WemeetApplication.class, args);
     }
 
 }

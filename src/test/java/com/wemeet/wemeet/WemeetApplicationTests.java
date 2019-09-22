@@ -1,8 +1,8 @@
-package com.xzw.goldbug2;
+package com.wemeet.wemeet;
 
-import com.xzw.goldbug2.entity.*;
-import com.xzw.goldbug2.repository.BugContentRepo;
-import com.xzw.goldbug2.repository.BugPropertyRepo;
+import com.wemeet.wemeet.entity.*;
+import com.wemeet.wemeet.repository.BugContentRepo;
+import com.wemeet.wemeet.repository.BugPropertyRepo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Goldbug2ApplicationTests {
+public class WemeetApplicationTests {
 
     @Autowired
     private BugPropertyRepo bugPropertyRepo;
@@ -29,7 +29,7 @@ public class Goldbug2ApplicationTests {
     public void contextLoads() {
     }
 
-    @Test
+//    @Test
     public void addBugProperty() {
         List<BugProperty> bugProperties = new ArrayList<>();
         for (int i = 0; i < 500; i++) {
@@ -50,7 +50,7 @@ public class Goldbug2ApplicationTests {
         bugPropertyRepo.saveAll(bugProperties);
     }
 
-    @Test
+//    @Test
     public void addBugContent() {
         // type指定增加哪种类型的内容
         int type = new Random().nextInt(3);     // 0 1 2
