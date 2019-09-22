@@ -1,6 +1,6 @@
-package com.xzw.goldbug2.repository;
+package com.wemeet.wemeet.repository;
 
-import com.xzw.goldbug2.entity.BugProperty;
+import com.wemeet.wemeet.entity.BugProperty;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.validation.constraints.NotNull;

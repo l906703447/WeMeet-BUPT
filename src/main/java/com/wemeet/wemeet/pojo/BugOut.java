@@ -1,4 +1,4 @@
-package com.xzw.goldbug2.pojo;
+package com.wemeet.wemeet.pojo;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +10,7 @@ import java.util.List;
  * @author xieziwei99
  * 2019-07-17
  * 从数据库中select时的虫子基本信息（不含内容）
+ * 尚未使用
  */
 @Getter
 @Setter
