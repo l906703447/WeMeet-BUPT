@@ -1,12 +1,10 @@
 package com.wemeet.wemeet.entity;
 
+import com.wemeet.wemeet.entity.user.User;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author xieziwei99
@@ -22,7 +20,8 @@ public class Message {
     @GeneratedValue
     private Long messageID;
 
-    private Long userID;    // TODO: 2019/7/15 应该用外键描述
+    @ManyToOne
+    private User user;
 
     @Embedded
     private ContentDesc contentDesc;
