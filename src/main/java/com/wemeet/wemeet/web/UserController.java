@@ -1,8 +1,9 @@
 package com.wemeet.wemeet.web;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.wemeet.wemeet.entity.user.User;
+import com.wemeet.wemeet.repository.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author xieziwei99
@@ -13,8 +14,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
 
-//    @PostMapping("/register")
-//    public String register(@RequestBody User user) {
-//        user.setGrade(0);
-//    }
+    private final UserRepo userRepo;
+
+    @Autowired
+    public UserController(UserRepo userRepo) {
+        this.userRepo = userRepo;
+    }
+
+    /**
+     * 至少需要提供name，email和password
+     * @param user 要注册的用户信息
+     * @return 注册成功返回OK，失败返回ERROR：用户已注册
+     */
+    @PostMapping("/register")
+    public String register(@RequestBody User user) {
+        if (userRepo.findByEmail(user.getEmail()) != null) {
+            user.setGrade(0).setScore(100.0);
+            userRepo.save(user);
+            return "OK";
+        } else {
+            return "ERROR: 此用户已注册";
+        }
+    }
 }
