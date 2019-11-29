@@ -1,5 +1,6 @@
 package com.wemeet.wemeet.entity;
 
+import com.wemeet.wemeet.entity.user.User;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -22,7 +23,8 @@ public class BugProperty {
     @GeneratedValue
     private Long bugID;
 
-    private Long userID;    // TODO: 2019/7/15 应该用外键描述
+    @ManyToOne
+    private User user;
 
     @NotNull
     private Double startLongitude;
@@ -52,7 +54,7 @@ public class BugProperty {
     private Integer restLifeCount;
 
     @ElementCollection
-    private List<String> tags;      // TODO: 2019/7/12 String?
+    private List<String> tags;
 
     private Integer temperature;
 

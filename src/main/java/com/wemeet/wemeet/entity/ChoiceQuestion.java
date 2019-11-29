@@ -31,7 +31,7 @@ public class ChoiceQuestion extends BugContent{
     private String choiceD;
 
     @NotNull
-    private String correctAnswer;   // TODO: 2019/7/13 I change it to String
+    private String correctAnswer;
 
     private Integer score;
 
