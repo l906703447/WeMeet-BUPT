@@ -8,6 +8,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  schedule:
+    - cron: '0 9 * * *'
 
 jobs:
   build:
@@ -22,3 +24,15 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: 'Send mail'
+      uses: dawidd6/action-send-mail@master
+      with:
+        server_address: smtp.qq.com
+        server_port: 465
+        username: ${{ secrets.MAILUSERNAME }}
+        password: ${{ secrets.MAILPASSWORD }}
+        subject: WeMeet-BUPT Build Report (${{env.REPORT_DATE}})
+        body: A Build Triggerd
+        to: l906703447@gmail.com
+        from: GitHub Actions
+        content_type: text/html
