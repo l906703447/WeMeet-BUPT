@@ -1,11 +1,11 @@
 package com.wemeet.wemeet.pojo;
 
-import com.wemeet.wemeet.entity.NarrativeQuestion;
-import com.wemeet.wemeet.entity.BugProperty;
-import com.wemeet.wemeet.entity.ChoiceQuestion;
-import com.wemeet.wemeet.entity.Moment;
+import com.wemeet.wemeet.entity.*;
+import com.wemeet.wemeet.entity.user.User;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Objects;
 
 /**
  * @author xieziwei99
@@ -20,4 +20,23 @@ public class Bug {
     private Moment moment;
     private ChoiceQuestion choiceQuestion;
     private NarrativeQuestion narrativeQuestion;
+    private VirusPoint virusPoint;
+    private User planter;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Bug bug = (Bug) o;
+        return Objects.equals(bugProperty, bug.bugProperty);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bugProperty);
+    }
 }

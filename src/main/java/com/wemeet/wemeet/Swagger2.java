@@ -31,9 +31,9 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {     // 创建API的基本信息
         return new ApiInfoBuilder()
-                .title("GoldBug APIs")
-                .description("仿照教程写的")
-                .contact("xieziwei")
+                .title("WeMeet APIs")
+                .description("WeMeet 是一款基于位置信息服务的社交软件")
+                .contact("xieziwei@bupt.edu.cn")
                 .version("1.0")
                 .build();
     }

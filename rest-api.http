@@ -1,0 +1,155 @@
+### updateBug
+PUT http://localhost:8080/bug/2645
+Content-Type: application/json
+
+{
+  "virusPoint": {
+    "status": 2
+  }
+}
+
+###
+### 根据 email 获取用户种植的所有虫子
+GET http://localhost:8080/user/plantBugs?email=test@qq.com
+Accept: application/json
+
+###
+### 增加虫子，疫情点
+POST http://localhost:8080/addBug
+Content-Type: application/json
+
+{
+  "bugProperty": {
+    "startLongitude": 116.46,
+    "startLatitude": 39.92,
+    "destLongitude": 116.46,
+    "destLatitude": 39.92,
+    "movable": false,
+    "survivalTime": 24,
+    "startTime": "1582268001",
+    "lifeCount": 10,
+    "restLifeCount": 10
+  },
+  "virusPoint": {
+    "type": 4,
+    "publishTime": "1582268001",
+    "description": "这里出现一个确诊病人，请大家小心",
+    "infectious": true,
+    "wayOfInfect": "人传人，空气传播"
+  },
+  "planter": {
+    "id": 1,
+    "name": "test",
+    "password": "test",
+    "email": "test@qq.com",
+    "score": 100
+  }
+}
+
+###
+### 删除用户所有约束
+GET http://localhost:8080/deleteUserCatchesBugConstraint?email=test@qq.com
+Accept: application/json
+
+###
+### 通过用户邮箱，获取用户捕捉过的虫子
+GET http://localhost:8080/getCaughtBugsByEmail?email=test@qq.com
+Accept: application/json
+
+###
+### 根据email和bugId增加捉与被捉的约束关系
+GET http://localhost:8080/addUserCatchesBugConstraint?email=test@qq.com&bugId=3&userAnswer=A
+Accept: application/json
+
+###
+### 通过邮箱和分数修改用户
+PUT http://localhost:8080/user/email/test@qq.com/score/-3
+Accept: application/json
+
+### 根据邮箱获取用户
+GET http://localhost:8080/user?email=test@qq.com
+Accept: application/json
+
+###
+### 更新用户字段
+PUT http://localhost:8080/user
+Content-Type: application/json
+
+{
+  "id": 2,
+  "email": "test@qq.com",
+  "name": "test",
+  "password": "test",
+  "phone_number": null,
+  "score": 101
+}
+
+###
+
+### getAroundBugs 批量获取周围虫子
+GET http://localhost:8080/getAroundBugs?userLon=113.13725605773938&userLat=29.725412441381348&meter=5000
+Accept: application/json
+
+###
+### 获取虫子
+GET http://localhost:8080/getBug/5
+Accept: application/json
+
+###
+### 增加虫子
+POST http://localhost:8080/addBug
+Content-Type: application/json
+
+{
+  "bugProperty": {
+    "startLongitude": 116.46,
+    "startLatitude": 39.92,
+    "movable": false,
+    "survivalTime": 24,
+    "startTime": "1582268001",
+    "lifeCount": 10
+  },
+  "choiceQuestion": {
+    "type": 1,
+    "publishTime": "1582268001",
+    "question": {
+      "textContent": "备选题"
+    },
+    "choiceA": "啊",
+    "choiceB": "啊啊",
+    "choiceC": "啊啊啊",
+    "choiceD": "啊啊啊啊",
+    "correctAnswer": "A",
+    "score": 2
+  }
+}
+
+###
+### 用户登陆
+POST http://localhost:8080/user/login
+Content-Type: application/json
+
+{
+  "email": "test@qq.com",
+  "password": "test",
+  "role": 0
+}
+
+<> 2020-01-12T021613.200.txt
+
+###
+### 用户注册
+POST http://localhost:8080/user/register
+Content-Type: application/json
+
+{
+  "name": "super",
+  "password": "super",
+  "email": "super@qq.com"
+}
+
+<> 2020-01-12T021234.200.txt
+<> 2020-01-12T021002.200.txt
+<> 2020-01-12T020916.500.json
+
+###
